@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MinecraftJSONGenerator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MinecraftJSONGenerator_jar</output-path>
+    <root id="archive" name="MinecraftJSONGenerator.jar">
+      <element id="module-output" name="MinecraftJSONGenerator" />
+    </root>
+  </artifact>
+</component>

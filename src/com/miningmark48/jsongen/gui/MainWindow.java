@@ -3,6 +3,8 @@ package com.miningmark48.jsongen.gui;
 import com.miningmark48.jsongen.Reference;
 import com.miningmark48.jsongen.generate.GenerateBlock;
 import com.miningmark48.jsongen.generate.GenerateItem;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -72,6 +74,7 @@ public class MainWindow extends JFrame {
                 if (result == JFileChooser.APPROVE_OPTION) {
                     exportPathTextField.setText(fileChooser.getSelectedFile().getPath());
                 }
+
             }
         });
     }

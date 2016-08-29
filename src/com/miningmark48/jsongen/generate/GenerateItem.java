@@ -19,21 +19,9 @@ public class GenerateItem {
 
             item = new PrintWriter(fileDir + "\\" + itemName + ".json", "UTF-8");
             item.println("{");
-            item.println("\t\"parent\": \"builtin/generated\",");
+            item.println("\t\"parent\": \"item/generated\",");
             item.println("\t\"textures\": {");
             item.println("\t\t\"layer0\": \"" + modId + ":items/" + textureName + "\"");
-            item.println("\t},");
-            item.println("\t\"display\": {");
-            item.println("\t\t\"thirdperson_righthand\": {");
-            item.println("\t\t\t\"rotation\": [ 0, 0, 0 ],");
-            item.println("\t\t\t\"translation\": [ 0, 3, 1 ],");
-            item.println("\t\t\t\"scale\": [ 0.55, 0.55, 0.55 ]");
-            item.println("\t\t},");
-            item.println("\t\t\"firstperson_righthand\": {");
-            item.println("\t\t\t\"rotation\": [ 0, -90, 25 ],");
-            item.println("\t\t\t\"translation\": [ 1.13, 3.2, 1.13 ],");
-            item.println("\t\t\t\"scale\": [ 0.68, 0.68, 0.68 ]");
-            item.println("\t\t}");
             item.println("\t}");
             item.println("}");
             item.close();

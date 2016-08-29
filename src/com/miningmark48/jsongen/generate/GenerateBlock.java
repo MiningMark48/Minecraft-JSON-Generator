@@ -20,7 +20,7 @@ public class GenerateBlock {
             block = new PrintWriter(fileDir + "\\" + blockName + ".json", "UTF-8");
             block.println("{");
             block.println("\t\"variants\": {");
-            block.println("\t\t\"normal\": { \"model\": \"" + blockName + "\" }");
+            block.println("\t\t\"normal\": { \"model\": \"" +  modId + ":" + blockName + "\" }");
             block.println("\t}");
             block.println("}");
             block.close();

@@ -7,9 +7,9 @@ import java.io.UnsupportedEncodingException;
 
 public class GenerateItem {
 
-    public static void genItem(String modId, String itemName, String textureName){
+    public static void genItem(String modId, String itemName, String textureName, String path){
 
-        File fileDir = new File(".\\export\\models\\item\\");
+        File fileDir = new File(path + "\\models\\item\\");
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
@@ -33,9 +33,9 @@ public class GenerateItem {
         }
     }
 
-    public static void genTool(String modId, String itemName, String textureName){
+    public static void genTool(String modId, String itemName, String textureName, String path){
 
-        File fileDir = new File(".\\export\\models\\item\\");
+        File fileDir = new File(path + "\\models\\item\\");
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }

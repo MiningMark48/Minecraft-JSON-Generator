@@ -7,9 +7,9 @@ import java.io.UnsupportedEncodingException;
 
 public class GenerateBlock {
 
-    public static void genBlock(String modId, String blockName, String textureName){
+    public static void genBlock(String modId, String blockName, String textureName, String path){
 
-        File fileDir = new File(".\\export\\blockstates\\");
+        File fileDir = new File(path + "\\blockstates\\");
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
@@ -31,14 +31,14 @@ public class GenerateBlock {
             e.printStackTrace();
         }
 
-        genBlockModel(modId, blockName, textureName);
-        genBlockItemModel(modId, blockName);
+        genBlockModel(modId, blockName, textureName, path);
+        genBlockItemModel(modId, blockName, path);
 
     }
 
-    private static void genBlockModel(String modId, String blockName, String textureName){
+    private static void genBlockModel(String modId, String blockName, String textureName, String path){
 
-        File fileDir = new File(".\\export\\models\\block\\");
+        File fileDir = new File(path + "\\models\\block\\");
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
@@ -63,9 +63,9 @@ public class GenerateBlock {
 
     }
 
-    private static void genBlockItemModel(String modId, String blockName) {
+    private static void genBlockItemModel(String modId, String blockName, String path) {
 
-        File fileDir = new File(".\\export\\models\\item\\");
+        File fileDir = new File(path + "\\models\\item\\");
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }

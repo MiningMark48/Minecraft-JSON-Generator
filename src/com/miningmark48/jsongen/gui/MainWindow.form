@@ -14,7 +14,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <toolTipText value="Your Mod ID"/>
+        </properties>
       </component>
       <component id="35147" class="javax.swing.JLabel">
         <constraints>
@@ -38,7 +40,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <toolTipText value="Your item's name"/>
+        </properties>
       </component>
       <component id="9412c" class="javax.swing.JLabel">
         <constraints>
@@ -54,7 +58,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <toolTipText value="The name of the texture for your item"/>
+        </properties>
       </component>
       <component id="7ad73" class="javax.swing.JButton" binding="generateItemJSONButton" default-binding="true">
         <constraints>
@@ -78,7 +84,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <toolTipText value="Your block's name"/>
+        </properties>
       </component>
       <component id="65da5" class="javax.swing.JLabel">
         <constraints>
@@ -94,7 +102,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <toolTipText value="The name of the texture for your block"/>
+        </properties>
       </component>
       <component id="f2fea" class="javax.swing.JButton" binding="generateBlockJSONButton" default-binding="true">
         <constraints>
@@ -139,7 +149,36 @@
           <grid row="3" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-12828863"/>
           <text value="Is Tool?"/>
+          <toolTipText value="If your item is a tool, select this."/>
+        </properties>
+      </component>
+      <component id="6502d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Export Path"/>
+        </properties>
+      </component>
+      <component id="8b46e" class="javax.swing.JTextField" binding="exportPathTextField">
+        <constraints>
+          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=".\export"/>
+        </properties>
+      </component>
+      <component id="c948f" class="javax.swing.JButton" binding="fileSelectButton">
+        <constraints>
+          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="..."/>
+          <toolTipText value="Select a custom path to export JSONs to."/>
         </properties>
       </component>
     </children>

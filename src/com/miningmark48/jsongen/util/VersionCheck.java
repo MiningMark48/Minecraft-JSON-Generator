@@ -17,11 +17,13 @@ public class VersionCheck implements Runnable{
     private static boolean isLatestVersion = false;
     private static String latestVersion = "";
 
+    private static String version = Reference.version;
+
     @Override
     public void run() {
         try {
 
-            URL url = new URL("https://raw.githubusercontent.com/MiningMark48/Pearcel-Mod/master/src/main/resources/versioninfo.json");
+            URL url = new URL("https://raw.githubusercontent.com/MiningMark48/Minecraft-JSON-Generator/master/src/com/miningmark48/jsongen/versioninfo.json");
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
             request.connect();
 
@@ -30,7 +32,10 @@ public class VersionCheck implements Runnable{
             JsonObject rootObj = root.getAsJsonObject();
 
             latestVersion = rootObj.get("version").getAsString();
-            isLatestVersion = Reference.version.equals(latestVersion);
+            isLatestVersion = version.equals(latestVersion);
+
+            System.out.println(latestVersion);
+            System.out.println(isLatestVersion);
 
         }catch (MalformedURLException e){
             e.printStackTrace();

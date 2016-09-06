@@ -115,6 +115,9 @@ public class MainWindow extends JFrame {
 
         JMenuBar menubar = new JMenuBar();
 
+        menubar.setBackground(Color.white);
+        menubar.setFont(modIDTextField.getFont());
+
         JMenu fileMenu = new JMenu("File");
         fileMenu.setMnemonic(KeyEvent.VK_F);
 
@@ -124,6 +127,7 @@ public class MainWindow extends JFrame {
         JMenuItem exitMenuItem = new JMenuItem("Exit");
         exitMenuItem.setMnemonic(KeyEvent.VK_E);
         exitMenuItem.setToolTipText("Exit application.");
+        exitMenuItem.setBackground(Color.white);
         exitMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
@@ -134,6 +138,7 @@ public class MainWindow extends JFrame {
         JMenuItem aboutMenuItem = new JMenuItem("About");
         aboutMenuItem.setMnemonic(KeyEvent.VK_A);
         aboutMenuItem.setToolTipText("About the application.");
+        aboutMenuItem.setBackground(Color.white);
         aboutMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

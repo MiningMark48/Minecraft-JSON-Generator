@@ -1,13 +1,11 @@
 package com.miningmark48.jsongen.gui;
 
-import com.miningmark48.jsongen.Main;
 import com.miningmark48.jsongen.Reference;
 import com.miningmark48.jsongen.generate.GenerateBlock;
 import com.miningmark48.jsongen.generate.GenerateItem;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.Stage;
 
 import javax.swing.*;
+import javax.swing.plaf.UIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,6 +35,9 @@ public class MainWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createMenuBar();
 
+        ImageIcon img = new ImageIcon(".\\src\\res\\icon.png");
+        setIconImage(img.getImage());
+
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             SwingUtilities.updateComponentTreeUI(mainPanel);
@@ -51,9 +52,6 @@ public class MainWindow extends JFrame {
         }
 
         isToolCheckBox.setBackground(Color.white);
-
-
-
 
 
         generateItemJSONButton.addActionListener(new ActionListener() {

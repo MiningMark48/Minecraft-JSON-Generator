@@ -21,16 +21,16 @@ public class Main {
         Thread versionCheckThread = new Thread(versionCheck, "Version Check");
         versionCheckThread.start();
 
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         MainWindow mainWindow = new MainWindow();
         mainWindow.setSize(800, 400);
         mainWindow.setVisible(true);
         mainWindow.setLocationRelativeTo(null);
-
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         checkForUpdates();
 

@@ -1,3 +1,5 @@
 Manifest-Version: 1.0
 Main-Class: com.miningmark48.jsongen.Main
 
+SplashScreen-Image: res/s.png
+

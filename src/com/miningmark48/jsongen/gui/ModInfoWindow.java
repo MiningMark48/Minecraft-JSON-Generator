@@ -21,7 +21,6 @@ public class ModInfoWindow extends JFrame {
     private JButton generateModInfoJSONButton;
     private JTextField pathText;
     private JButton button1;
-    private JScrollPane jsp;
 
     public ModInfoWindow() {
         super("Mod Info Generator");
@@ -29,6 +28,10 @@ public class ModInfoWindow extends JFrame {
         getContentPane().setBackground(Color.white);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         setResizable(false);
+
+        ImageIcon img = new ImageIcon(".\\src\\res\\icon.png");
+        setIconImage(img.getImage());
+
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException e) {

@@ -27,7 +27,7 @@ public class MainWindow extends JFrame {
     private JButton modInfoButton;
 
     public MainWindow() {
-        super("Minecraft JSON Generator for Minecraft" + Reference.gameVersion + " by " + Reference.author);
+        super("Minecraft JSON Generator for Minecraft " + Reference.gameVersion + " by " + Reference.author);
 
         setResizable(false);
         setContentPane(mainPanel);

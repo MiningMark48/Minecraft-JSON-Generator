@@ -1,9 +1,10 @@
 package com.miningmark48.jsongen.generate;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonWriter;
+
+import java.io.*;
 
 public class GenerateBlock {
 
@@ -14,20 +15,29 @@ public class GenerateBlock {
             fileDir.mkdirs();
         }
 
-        PrintWriter block;
         try {
 
-            block = new PrintWriter(fileDir + "\\" + blockName + ".json", "UTF-8");
-            block.println("{");
-            block.println("\t\"variants\": {");
-            block.println("\t\t\"normal\": { \"model\": \"" +  modId + ":" + blockName + "\" }");
-            block.println("\t}");
-            block.println("}");
-            block.close();
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_TEST.json"), "UTF-8");
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonWriter jw = gson.newJsonWriter(writer);
 
+            jw.beginObject();
+            jw.name("variants");
+            jw.beginObject();
+            jw.name("normal");
+            jw.beginObject();
+            jw.name("model").value(modId + ":blocks/" + blockName);
+            jw.endObject();
+            jw.endObject();
+            jw.endObject();
+
+            writer.close();
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -43,47 +53,61 @@ public class GenerateBlock {
             fileDir.mkdirs();
         }
 
-        PrintWriter block;
         try {
 
-            block = new PrintWriter(fileDir + "\\" + blockName + ".json", "UTF-8");
-            block.println("{");
-            block.println("\t\"parent\": \"block/cube_all\",");
-            block.println("\t\"textures\": {");
-            block.println("\t\t\"all\": \"" + modId + ":blocks/" + textureName + "\"");
-            block.println("\t}");
-            block.println("}");
-            block.close();
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + ".json"), "UTF-8");
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonWriter jw = gson.newJsonWriter(writer);
 
+            jw.beginObject();
+            jw.name("parent").value("block/cube_all");
+            jw.name("textures");
+            jw.beginObject();
+            jw.name("all").value(modId + ":blocks/" + textureName);
+            jw.endObject();
+            jw.endObject();
+
+            writer.close();
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    private static void genBlockItemModel(String modId, String blockName, String path) {
+    private static void genBlockItemModel(String modId, String blockName, String path){
 
         File fileDir = new File(path + "\\models\\item\\");
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
 
-        PrintWriter block;
         try {
 
-            block = new PrintWriter(fileDir + "\\" + blockName + ".json", "UTF-8");
-            block.println("{");
-            block.println("\t\"parent\": \"" + modId + ":block/" + blockName + "\"");
-            block.println("}");
-            block.close();
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + ".json"), "UTF-8");
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonWriter jw = gson.newJsonWriter(writer);
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            jw.beginObject();
+
+            jw.name("parent").value(modId + ":block/" + blockName);
+
+            jw.endObject();
+
+            writer.close();
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
 
     }
 

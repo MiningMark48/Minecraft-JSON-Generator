@@ -1,9 +1,10 @@
 package com.miningmark48.jsongen.generate;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonWriter;
+
+import java.io.*;
 
 public class GenerateItem {
 
@@ -14,21 +15,27 @@ public class GenerateItem {
             fileDir.mkdirs();
         }
 
-        PrintWriter item;
         try {
 
-            item = new PrintWriter(fileDir + "\\" + itemName + ".json", "UTF-8");
-            item.println("{");
-            item.println("\t\"parent\": \"item/generated\",");
-            item.println("\t\"textures\": {");
-            item.println("\t\t\"layer0\": \"" + modId + ":items/" + textureName + "\"");
-            item.println("\t}");
-            item.println("}");
-            item.close();
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + itemName + ".json"), "UTF-8");
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonWriter jw = gson.newJsonWriter(writer);
 
+            jw.beginObject();
+            jw.name("parent").value("item/generated");
+            jw.name("textures");
+            jw.beginObject();
+            jw.name("layer0").value(modId + ":items/" + textureName);
+            jw.endObject();
+            jw.endObject();
+
+            writer.close();
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -40,21 +47,27 @@ public class GenerateItem {
             fileDir.mkdirs();
         }
 
-        PrintWriter item;
         try {
 
-            item = new PrintWriter(fileDir + "\\" + itemName + ".json", "UTF-8");
-            item.println("{");
-            item.println("\t\"parent\": \"item/handheld\",");
-            item.println("\t\"textures\": {");
-            item.println("\t\t\"layer0\": \"" + modId + ":items/" + textureName + "\"");
-            item.println("\t}");
-            item.println("}");
-            item.close();
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + itemName + ".json"), "UTF-8");
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonWriter jw = gson.newJsonWriter(writer);
 
+            jw.beginObject();
+            jw.name("parent").value("item/handheld");
+            jw.name("textures");
+            jw.beginObject();
+            jw.name("layer0").value(modId + ":items/" + textureName);
+            jw.endObject();
+            jw.endObject();
+
+            writer.close();
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

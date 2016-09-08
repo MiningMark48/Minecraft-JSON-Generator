@@ -1,9 +1,10 @@
 package com.miningmark48.jsongen.generate;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonWriter;
+
+import java.io.*;
 
 public class GenerateModInfo {
 
@@ -14,34 +15,47 @@ public class GenerateModInfo {
             fileDir.mkdirs();
         }
 
-        PrintWriter item;
         try {
 
-            item = new PrintWriter(fileDir + "\\mcmod.info", "UTF-8");
-            item.println("[");
-            item.println("{");
-            item.println("\"modid\": \"" + modId + "\",");
-            item.println("\"name\": \"" + modName + "\",");
-            item.println("\"description\": \"" + description + "\",");
-            item.println("\"version\": \"" + version + "\",");
-            item.println("\"credits\": \"" + credits + "\",");
-            item.println("\"logoFile\": \"\",");
-            item.println("\"mcversion\": \"" + gameVersion + "\",");
-            item.println("\"url\": \"" + url + "\",");
-            item.println("\"updateUrl\": \"\",");
-            item.println("\"authorList\": [ \"" + author + "\" ],");
-            item.println("\"parent\": \"\",");
-            item.println("\"screenshots\": [],");
-            item.println("\"dependencies\": [");
-            item.println("\"mod_MinecraftForge\"");
-            item.println("]");
-            item.println("}");
-            item.println("]");
-            item.close();
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\mcmod.info"), "UTF-8");
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonWriter jw = gson.newJsonWriter(writer);
 
+            jw.beginArray();
+            jw.beginObject();
+
+            jw.name("modid").value(modId);
+            jw.name("name").value(modName);
+            jw.name("description").value(description);
+            jw.name("version").value(version);
+            jw.name("credits").value(credits);
+            jw.name("logoFile").value("");
+            jw.name("mcversion").value(gameVersion);
+            jw.name("url").value(url);
+            jw.name("updateUrl").value("");
+            jw.name("authorList");
+            jw.beginArray();
+            jw.value(author);
+            jw.endArray();
+            jw.name("parent").value("");
+            jw.name("screenshots");
+            jw.beginArray();
+            jw.endArray();
+            jw.name("dependencies");
+            jw.beginArray();
+            jw.value("mod_MinecraftForge");
+            jw.endArray();
+
+            jw.endObject();
+            jw.endArray();
+
+            writer.close();
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

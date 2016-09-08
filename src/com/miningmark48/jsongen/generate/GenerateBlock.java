@@ -22,6 +22,7 @@ public class GenerateBlock {
             JsonWriter jw = gson.newJsonWriter(writer);
 
             jw.beginObject();
+            jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
             jw.name("variants");
             jw.beginObject();
             jw.name("normal");
@@ -60,6 +61,7 @@ public class GenerateBlock {
             JsonWriter jw = gson.newJsonWriter(writer);
 
             jw.beginObject();
+            jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
             jw.name("parent").value("block/cube_all");
             jw.name("textures");
             jw.beginObject();
@@ -94,6 +96,7 @@ public class GenerateBlock {
 
             jw.beginObject();
 
+            jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
             jw.name("parent").value(modId + ":block/" + blockName);
 
             jw.endObject();

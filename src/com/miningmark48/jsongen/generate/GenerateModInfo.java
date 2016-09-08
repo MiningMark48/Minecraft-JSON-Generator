@@ -24,6 +24,7 @@ public class GenerateModInfo {
             jw.beginArray();
             jw.beginObject();
 
+            jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
             jw.name("modid").value(modId);
             jw.name("name").value(modName);
             jw.name("description").value(description);

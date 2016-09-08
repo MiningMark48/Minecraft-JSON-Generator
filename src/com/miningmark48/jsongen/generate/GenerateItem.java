@@ -22,6 +22,7 @@ public class GenerateItem {
             JsonWriter jw = gson.newJsonWriter(writer);
 
             jw.beginObject();
+            jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
             jw.name("parent").value("item/generated");
             jw.name("textures");
             jw.beginObject();
@@ -54,6 +55,7 @@ public class GenerateItem {
             JsonWriter jw = gson.newJsonWriter(writer);
 
             jw.beginObject();
+            jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
             jw.name("parent").value("item/handheld");
             jw.name("textures");
             jw.beginObject();

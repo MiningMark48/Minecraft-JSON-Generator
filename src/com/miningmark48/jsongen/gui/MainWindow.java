@@ -5,7 +5,6 @@ import com.miningmark48.jsongen.generate.GenerateBlock;
 import com.miningmark48.jsongen.generate.GenerateItem;
 
 import javax.swing.*;
-import javax.swing.plaf.UIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +24,7 @@ public class MainWindow extends JFrame {
     private JTextField exportPathTextField;
     private JButton fileSelectButton;
     private JButton modInfoButton;
+    private JButton moreButton;
 
     public MainWindow() {
         super("Minecraft JSON Generator for Minecraft " + Reference.gameVersion + " by " + Reference.author);
@@ -105,6 +105,16 @@ public class MainWindow extends JFrame {
                 modInfoWindow.setLocationRelativeTo(null);
 
                 modInfoWindow.modIDText.setText(modIDTextField.getText());
+            }
+        });
+        moreButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BlockMoreWindow moreWindow = new BlockMoreWindow();
+                moreWindow.setSize(350, 200);
+                moreWindow.setVisible(true);
+                moreWindow.setLocationRelativeTo(null);
+
             }
         });
     }
@@ -190,7 +200,7 @@ public class MainWindow extends JFrame {
         mainPanel.add(label3, new com.intellij.uiDesigner.core.GridConstraints(6, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_EAST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         blockNameTextField = new JTextField();
         blockNameTextField.setToolTipText("Your block's name");
-        mainPanel.add(blockNameTextField, new com.intellij.uiDesigner.core.GridConstraints(6, 2, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        mainPanel.add(blockNameTextField, new com.intellij.uiDesigner.core.GridConstraints(6, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
         mainPanel.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         fileSelectButton = new JButton();
@@ -216,7 +226,7 @@ public class MainWindow extends JFrame {
         mainPanel.add(label5, new com.intellij.uiDesigner.core.GridConstraints(7, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_EAST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         blockTextureNameTextField = new JTextField();
         blockTextureNameTextField.setToolTipText("The name of the texture for your block");
-        mainPanel.add(blockTextureNameTextField, new com.intellij.uiDesigner.core.GridConstraints(7, 2, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        mainPanel.add(blockTextureNameTextField, new com.intellij.uiDesigner.core.GridConstraints(7, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         generateBlockJSONButton = new JButton();
         generateBlockJSONButton.setDoubleBuffered(false);
         generateBlockJSONButton.setText("Generate Block JSON");
@@ -242,6 +252,9 @@ public class MainWindow extends JFrame {
         exportPathTextField = new JTextField();
         exportPathTextField.setText(".\\export");
         mainPanel.add(exportPathTextField, new com.intellij.uiDesigner.core.GridConstraints(1, 4, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        moreButton = new JButton();
+        moreButton.setText("More");
+        mainPanel.add(moreButton, new com.intellij.uiDesigner.core.GridConstraints(6, 3, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**

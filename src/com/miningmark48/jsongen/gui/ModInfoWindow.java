@@ -1,12 +1,21 @@
 package com.miningmark48.jsongen.gui;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.miningmark48.jsongen.generate.GenerateModInfo;
+import jdk.internal.instrumentation.Logger;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ModInfoWindow extends JFrame {
     private JPanel mainPanel;
@@ -21,6 +30,7 @@ public class ModInfoWindow extends JFrame {
     private JButton generateModInfoJSONButton;
     private JTextField pathText;
     private JButton button1;
+    private JButton importButton;
 
     public ModInfoWindow() {
         super("Mod Info Generator");
@@ -74,6 +84,42 @@ public class ModInfoWindow extends JFrame {
                 GenerateModInfo.genModInfo(modIDText.getText(), modNameText.getText(), modVersionText.getText(), gameVersionText.getText(), authorText.getText(), urlText.getText(), descriptionText.getText(), creditsText.getText(), pathText.getText());
 
                 JOptionPane.showMessageDialog(null, "JSON was generated.");
+            }
+        });
+        importButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+                fileChooser.setDialogTitle("Open file.");
+                fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+                fileChooser.setFileFilter(new FileNameExtensionFilter("Info Files (*.info)", "info"));
+                int result = fileChooser.showOpenDialog(getParent());
+
+                if (result == JFileChooser.APPROVE_OPTION) {
+
+                    try {
+
+                        JsonParser jp = new JsonParser();
+                        JsonElement root = jp.parse(new FileReader(fileChooser.getSelectedFile().getPath()));
+                        JsonArray rootArray = root.getAsJsonArray();
+                        JsonObject rootObj = rootArray.get(0).getAsJsonObject();
+
+                        modIDText.setText(rootObj.get("modid").getAsString());
+                        modNameText.setText(rootObj.get("name").getAsString());
+                        modVersionText.setText(rootObj.get("version").getAsString());
+                        gameVersionText.setText(rootObj.get("mcversion").getAsString());
+                        authorText.setText(rootObj.get("authorList").getAsJsonArray().get(0).getAsString());
+                        urlText.setText(rootObj.get("url").getAsString());
+                        descriptionText.setText(rootObj.get("description").getAsString());
+                        creditsText.setText(rootObj.get("credits").getAsString());
+
+
+                    } catch (FileNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
+
+                }
             }
         });
     }
@@ -166,6 +212,9 @@ public class ModInfoWindow extends JFrame {
         descriptionText.setText("");
         descriptionText.setWrapStyleWord(true);
         mainPanel.add(descriptionText, new com.intellij.uiDesigner.core.GridConstraints(4, 2, 1, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(450, 50), null, 0, false));
+        importButton = new JButton();
+        importButton.setText("Import");
+        mainPanel.add(importButton, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**

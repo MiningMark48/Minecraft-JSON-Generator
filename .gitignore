@@ -41,3 +41,4 @@ options.txt
 *.log
 *.mca
 /export
+*.ifp

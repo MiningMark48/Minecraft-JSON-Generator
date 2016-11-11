@@ -27,7 +27,7 @@ public class GenerateBlock {
             jw.beginObject();
             jw.name("normal");
             jw.beginObject();
-            jw.name("model").value(modId + ":blocks/" + blockName);
+            jw.name("model").value(modId + ":" + blockName);
             jw.endObject();
             jw.endObject();
             jw.endObject();

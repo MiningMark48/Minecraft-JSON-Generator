@@ -49,7 +49,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="0.0.1"/>
+          <text value="${version}"/>
         </properties>
       </component>
       <component id="3fb" class="javax.swing.JLabel">
@@ -91,7 +91,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="1.9.4"/>
+          <text value="${mcversion}"/>
         </properties>
       </component>
       <component id="199b2" class="javax.swing.JLabel">

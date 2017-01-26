@@ -134,6 +134,20 @@ public class GenerateBlockFence {
 
             writer2.close();
 
+            Writer writer3 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_inventory" + ".json"), "UTF-8");
+            JsonWriter jw3 = gson.newJsonWriter(writer3);
+
+            jw3.beginObject();
+            jw3.name("_comment").value("Generated using MiningMark48's JSON Generator.");
+            jw3.name("parent").value("block/fence_inventory");
+            jw3.name("textures");
+            jw3.beginObject();
+            jw3.name("texture").value(modId + ":blocks/" + textureName);
+            jw3.endObject();
+            jw3.endObject();
+
+            writer3.close();
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
@@ -160,7 +174,7 @@ public class GenerateBlockFence {
             jw.beginObject();
 
             jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw.name("parent").value(modId + ":block/" + blockName);
+            jw.name("parent").value(modId + ":block/" + blockName + "_inventory");
 
             jw.endObject();
 

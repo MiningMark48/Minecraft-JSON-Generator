@@ -20,6 +20,8 @@ public class BlockFenceWindow extends JFrame {
 
     public BlockFenceWindow() {
 
+        super("Generate Block: Fence");
+
         setContentPane(panel1);
         getContentPane().setBackground(Color.white);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

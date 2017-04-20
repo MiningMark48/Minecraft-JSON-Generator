@@ -18,15 +18,6 @@
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
-      <component id="bc30e" class="javax.swing.JButton" binding="doorButton" default-binding="true">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <text value="Door"/>
-        </properties>
-      </component>
       <component id="41172" class="javax.swing.JButton" binding="trapDoorButton" default-binding="true">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -108,15 +99,6 @@
           <text value="Torch"/>
         </properties>
       </component>
-      <component id="938ad" class="javax.swing.JButton" binding="slabButton" default-binding="true">
-        <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <enabled value="false"/>
-          <text value="Slab"/>
-        </properties>
-      </component>
       <component id="cf1ed" class="javax.swing.JButton" binding="fenceButton" default-binding="true">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -142,6 +124,24 @@
         <properties>
           <enabled value="false"/>
           <text value="Stair"/>
+        </properties>
+      </component>
+      <component id="bc30e" class="javax.swing.JButton" binding="doorButton" default-binding="true">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <text value="Door"/>
+        </properties>
+      </component>
+      <component id="938ad" class="javax.swing.JButton" binding="slabButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <enabled value="true"/>
+          <text value="Slab"/>
         </properties>
       </component>
     </children>

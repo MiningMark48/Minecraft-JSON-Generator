@@ -25,6 +25,8 @@ public class MainWindow extends JFrame {
     private JButton fileSelectButton;
     private JButton modInfoButton;
     private JButton moreButton;
+    private JButton recipesButton;
+    private JButton soundsButton;
 
     public MainWindow() {
         super("Minecraft JSON Generator for Minecraft " + Reference.gameVersion + " by " + Reference.author);
@@ -117,6 +119,15 @@ public class MainWindow extends JFrame {
 
             }
         });
+        recipesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RecipeTypeWindow recipeTypeWindow = new RecipeTypeWindow();
+                recipeTypeWindow.setSize(350, 150);
+                recipeTypeWindow.setVisible(true);
+                recipeTypeWindow.setLocationRelativeTo(null);
+            }
+        });
     }
 
     private void createMenuBar() {
@@ -179,7 +190,7 @@ public class MainWindow extends JFrame {
      */
     private void $$$setupUI$$$() {
         mainPanel = new JPanel();
-        mainPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(9, 9, new Insets(0, 0, 0, 0), -1, -1));
+        mainPanel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(11, 9, new Insets(0, 0, 0, 0), -1, -1));
         mainPanel.setOpaque(true);
         mainPanel.setVisible(true);
         mainPanel.putClientProperty("html.disable", Boolean.FALSE);
@@ -240,7 +251,7 @@ public class MainWindow extends JFrame {
         final com.intellij.uiDesigner.core.Spacer spacer5 = new com.intellij.uiDesigner.core.Spacer();
         mainPanel.add(spacer5, new com.intellij.uiDesigner.core.GridConstraints(5, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer6 = new com.intellij.uiDesigner.core.Spacer();
-        mainPanel.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(8, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        mainPanel.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(10, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         modInfoButton = new JButton();
         modInfoButton.setFocusPainted(true);
         modInfoButton.setRequestFocusEnabled(false);
@@ -255,6 +266,16 @@ public class MainWindow extends JFrame {
         moreButton = new JButton();
         moreButton.setText("More");
         mainPanel.add(moreButton, new com.intellij.uiDesigner.core.GridConstraints(6, 3, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        recipesButton = new JButton();
+        recipesButton.setEnabled(false);
+        recipesButton.setText("Recipes");
+        mainPanel.add(recipesButton, new com.intellij.uiDesigner.core.GridConstraints(9, 1, 1, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final com.intellij.uiDesigner.core.Spacer spacer7 = new com.intellij.uiDesigner.core.Spacer();
+        mainPanel.add(spacer7, new com.intellij.uiDesigner.core.GridConstraints(8, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        soundsButton = new JButton();
+        soundsButton.setEnabled(false);
+        soundsButton.setText("Sounds");
+        mainPanel.add(soundsButton, new com.intellij.uiDesigner.core.GridConstraints(9, 4, 1, 4, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**

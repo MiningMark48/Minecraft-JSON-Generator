@@ -60,7 +60,7 @@
                         <Insets left="15.0" right="15.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="135.0" text="Pressure Plate" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#handlePressurePlateButtonAction" prefHeight="20.0" prefWidth="135.0" text="Pressure Plate" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="15.0" right="15.0" />
                      </GridPane.margin>

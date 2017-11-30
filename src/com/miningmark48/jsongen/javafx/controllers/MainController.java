@@ -11,9 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.MenuBar;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Ref;
 
 public class MainController {
 
@@ -35,6 +37,7 @@ public class MainController {
 
         stage.setTitle("Block Generator");
         stage.setScene(scene);
+        stage.getIcons().add(new Image(Reference.iconURL));
         stage.show();
     }
 
@@ -46,6 +49,7 @@ public class MainController {
 
         stage.setTitle("Item Generator");
         stage.setScene(scene);
+        stage.getIcons().add(new Image(Reference.iconURL));
         stage.show();
     }
 

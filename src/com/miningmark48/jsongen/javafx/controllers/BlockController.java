@@ -1,5 +1,6 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
+import com.miningmark48.jsongen.Reference;
 import com.miningmark48.jsongen.generate.GenerateBlock;
 import com.miningmark48.jsongen.javafx.ReferenceAlerts;
 import javafx.application.Platform;
@@ -10,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
@@ -49,6 +51,7 @@ public class BlockController {
 
         stage.setTitle("Block Generator - Advanced");
         stage.setScene(scene);
+        stage.getIcons().add(new Image(Reference.iconURL));
         stage.show();
     }
 

@@ -1,5 +1,6 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
+import com.miningmark48.jsongen.Reference;
 import com.miningmark48.jsongen.javafx.ReferenceAlerts;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,10 +18,6 @@ import java.io.IOException;
 public class AdvancedBlockController {
 
     @FXML private MenuBar menu_bar;
-    @FXML private TextField fieldModId;
-    @FXML private TextField fieldBlockName;
-    @FXML private TextField fieldTextureName;
-    @FXML private TextField fieldExportPath;
 
     @FXML private void handleCloseButtonAction(ActionEvent event){
         Platform.exit();
@@ -37,6 +35,7 @@ public class AdvancedBlockController {
 
         stage.setTitle("Block - Fence Generator");
         stage.setScene(scene);
+        stage.getIcons().add(new Image(Reference.iconURL));
         stage.show();
     }
 
@@ -48,6 +47,7 @@ public class AdvancedBlockController {
 
         stage.setTitle("Block - Pressure Plate Generator");
         stage.setScene(scene);
+        stage.getIcons().add(new Image(Reference.iconURL));
         stage.show();
     }
 
@@ -59,6 +59,7 @@ public class AdvancedBlockController {
 
         stage.setTitle("Block - Slab Generator");
         stage.setScene(scene);
+        stage.getIcons().add(new Image(Reference.iconURL));
         stage.show();
     }
 

@@ -1,28 +1,26 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
-import com.miningmark48.jsongen.generate.GenerateBlock;
+import com.miningmark48.jsongen.generate.GenerateBlockFence;
+import com.miningmark48.jsongen.generate.GenerateBlockSlab;
 import com.miningmark48.jsongen.javafx.ReferenceAlerts;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.IOException;
 
-public class BlockController {
+public class SlabController {
 
     @FXML private MenuBar menu_bar;
     @FXML private TextField fieldModId;
     @FXML private TextField fieldBlockName;
     @FXML private TextField fieldTextureName;
     @FXML private TextField fieldExportPath;
+    @FXML private TextField fieldMockName;
 
     @FXML private void handleCloseButtonAction(ActionEvent event){
         Platform.exit();
@@ -41,22 +39,12 @@ public class BlockController {
         if (selectedDirectory != null) fieldExportPath.setText(selectedDirectory.getPath());
     }
 
-    @FXML private void handleAdvancedButtonAction(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced.fxml"));
-
-        Scene scene = new Scene(root, 800, 400);
-
-        stage.setTitle("Block Generator - Advanced");
-        stage.setScene(scene);
-        stage.show();
-    }
-
     @FXML private void handleGenerateButtonAction(ActionEvent event) {
-        GenerateBlock.genBlock(fieldModId.getText(), fieldBlockName.getText(), fieldTextureName.getText(), fieldExportPath.getText());
+        GenerateBlockSlab.genBlock(fieldModId.getText(), fieldBlockName.getText(), fieldTextureName.getText(), fieldMockName.getText(), fieldExportPath.getText());
 
         fieldBlockName.clear();
         fieldTextureName.clear();
+        fieldMockName.clear();
         ReferenceAlerts.generatedAlert.showAndWait();
     }
 

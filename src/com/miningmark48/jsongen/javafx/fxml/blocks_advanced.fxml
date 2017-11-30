@@ -65,7 +65,7 @@
                         <Insets left="15.0" right="15.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="135.0" text="Slab" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button mnemonicParsing="false" onAction="#handleSlabButtonAction" prefHeight="20.0" prefWidth="135.0" text="Slab" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="15.0" right="15.0" />
                      </GridPane.margin>

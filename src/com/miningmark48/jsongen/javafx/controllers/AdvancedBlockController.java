@@ -51,4 +51,15 @@ public class AdvancedBlockController {
         stage.show();
     }
 
+    @FXML private void handleSlabButtonAction(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/slab.fxml"));
+
+        Scene scene = new Scene(root, 800, 400);
+
+        stage.setTitle("Block - Slab Generator");
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

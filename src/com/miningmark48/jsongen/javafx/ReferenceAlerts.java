@@ -14,7 +14,7 @@ public class ReferenceAlerts {
         aboutAlert.setContentText("Minecraft JSON Generator v" + Reference.version + " by " + Reference.author);
 
         generatedAlert.setTitle("Generated");
-        generatedAlert.setHeaderText("Generated");
+        generatedAlert.setHeaderText("Generation Successful");
         generatedAlert.setContentText("JSON was successfully generated.");
     }
 

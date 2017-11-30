@@ -51,7 +51,7 @@
                         <Tooltip text="Generate a block model" />
                      </tooltip>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="Items" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#handleItemButtonAction" prefHeight="50.0" prefWidth="125.0" text="Items" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

@@ -38,4 +38,15 @@ public class MainController {
         stage.show();
     }
 
+    @FXML private void handleItemButtonAction(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/items.fxml"));
+
+        Scene scene = new Scene(root, 800, 400);
+
+        stage.setTitle("Item Generator");
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

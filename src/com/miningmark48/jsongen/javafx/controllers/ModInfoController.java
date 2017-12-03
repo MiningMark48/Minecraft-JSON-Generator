@@ -49,6 +49,11 @@ public class ModInfoController {
     @FXML private void handleImportButtonAction(ActionEvent event){
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All Files", "*.*"),
+                new FileChooser.ExtensionFilter("Mod Info", "*.info"),
+                new FileChooser.ExtensionFilter("JSON", "*.json")
+        );
         File file = fileChooser.showOpenDialog(new Stage());
 
         try {

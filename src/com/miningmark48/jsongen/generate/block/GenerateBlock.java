@@ -1,4 +1,4 @@
-package com.miningmark48.jsongen.generate;
+package com.miningmark48.jsongen.generate.block;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -6,9 +6,9 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.*;
 
-public class GenerateBlockOriented {
+public class GenerateBlock {
 
-    public static void genBlock(String modId, String blockName, String topTextureName, String bottomTextureName, String frontTextureName, String sidesTextureName, String path){
+    public static void genBlock(String modId, String blockName, String textureName, String path){
 
         File fileDir = new File(path + "\\blockstates\\");
         if(!fileDir.exists()){
@@ -25,30 +25,10 @@ public class GenerateBlockOriented {
             jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
             jw.name("variants");
             jw.beginObject();
-
-            jw.name("facing=north");
+            jw.name("normal");
             jw.beginObject();
-            jw.name("model").value(blockName);
+            jw.name("model").value(modId + ":" + blockName);
             jw.endObject();
-
-            jw.name("facing=south");
-            jw.beginObject();
-            jw.name("model").value(blockName);
-            jw.name("y").value(180);
-            jw.endObject();
-
-            jw.name("facing=west");
-            jw.beginObject();
-            jw.name("model").value(blockName);
-            jw.name("y").value(270);
-            jw.endObject();
-
-            jw.name("facing=east");
-            jw.beginObject();
-            jw.name("model").value(blockName);
-            jw.name("y").value(90);
-            jw.endObject();
-
             jw.endObject();
             jw.endObject();
 
@@ -62,12 +42,12 @@ public class GenerateBlockOriented {
             e.printStackTrace();
         }
 
-        genBlockModel(modId, blockName, topTextureName, bottomTextureName, frontTextureName, sidesTextureName, path);
+        genBlockModel(modId, blockName, textureName, path);
         genBlockItemModel(modId, blockName, path);
 
     }
 
-    private static void genBlockModel(String modId, String blockName, String topTextureName, String bottomTextureName, String frontTextureName, String sidesTextureName, String path){
+    private static void genBlockModel(String modId, String blockName, String textureName, String path){
 
         File fileDir = new File(path + "\\models\\block\\");
         if(!fileDir.exists()){
@@ -82,12 +62,10 @@ public class GenerateBlockOriented {
 
             jw.beginObject();
             jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw.name("parent").value("block/orientable");
+            jw.name("parent").value("block/cube_all");
             jw.name("textures");
             jw.beginObject();
-            jw.name("top").value(modId + ":blocks/" + topTextureName);
-            jw.name("front").value(modId + ":blocks/" + frontTextureName);
-            jw.name("side").value(modId + ":blocks/" + sidesTextureName);
+            jw.name("all").value(modId + ":blocks/" + textureName);
             jw.endObject();
             jw.endObject();
 
@@ -135,5 +113,6 @@ public class GenerateBlockOriented {
 
 
     }
+
 
 }

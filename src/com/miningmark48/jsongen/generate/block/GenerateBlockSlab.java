@@ -1,4 +1,4 @@
-package com.miningmark48.jsongen.generate;
+package com.miningmark48.jsongen.generate.block;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -6,9 +6,9 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.*;
 
-public class GenerateBlockFence {
+public class GenerateBlockSlab {
 
-    public static void genBlock(String modId, String blockName, String textureName, String path){
+    public static void genBlock(String modId, String blockName, String textureName, String blockMockName, String path){
 
         File fileDir = new File(path + "\\blockstates\\");
         if(!fileDir.exists()){
@@ -23,65 +23,47 @@ public class GenerateBlockFence {
 
             jw.beginObject();
             jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw.name("multipart");
-            jw.beginArray();
+            jw.name("variants");
             jw.beginObject();
-            jw.name("apply");
+
+            jw.name("half=bottom");
             jw.beginObject();
-            jw.name("model").value(modId + ":" + blockName + "_post");
+            jw.name("model").value("half_" + blockName);
             jw.endObject();
-            jw.endObject();
+
+            jw.name("half=top");
             jw.beginObject();
-            jw.name("when");
-            jw.beginObject();
-            jw.name("north").value("true");
+            jw.name("model").value("upper_" + blockName);
             jw.endObject();
-            jw.name("apply");
-            jw.beginObject();
-            jw.name("model").value(modId + ":" + blockName + "_side");
-            jw.name("uvlock").value(true);
+
             jw.endObject();
-            jw.endObject();
-            jw.beginObject();
-            jw.name("when");
-            jw.beginObject();
-            jw.name("east").value("true");
-            jw.endObject();
-            jw.name("apply");
-            jw.beginObject();
-            jw.name("model").value(modId + ":" + blockName + "_side");
-            jw.name("y").value(90);
-            jw.name("uvlock").value(true);
-            jw.endObject();
-            jw.endObject();
-            jw.beginObject();
-            jw.name("when");
-            jw.beginObject();
-            jw.name("south").value("true");
-            jw.endObject();
-            jw.name("apply");
-            jw.beginObject();
-            jw.name("model").value(modId + ":" + blockName + "_side");
-            jw.name("y").value(180);
-            jw.name("uvlock").value(true);
-            jw.endObject();
-            jw.endObject();
-            jw.beginObject();
-            jw.name("when");
-            jw.beginObject();
-            jw.name("west").value("true");
-            jw.endObject();
-            jw.name("apply");
-            jw.beginObject();
-            jw.name("model").value(modId + ":" + blockName + "_side");
-            jw.name("y").value(270);
-            jw.name("uvlock").value(true);
-            jw.endObject();
-            jw.endObject();
-            jw.endArray();
             jw.endObject();
 
             writer.close();
+
+            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_double" + ".json"), "UTF-8");
+            Gson gson2 = new GsonBuilder().setPrettyPrinting().create();
+            JsonWriter jw2 = gson2.newJsonWriter(writer2);
+
+            jw2.beginObject();
+            jw2.name("_comment").value("Generated using MiningMark48's JSON Generator.");
+            jw2.name("variants");
+            jw2.beginObject();
+
+            jw2.name("normal");
+            jw2.beginObject();
+            jw2.name("model").value(blockMockName);
+            jw2.endObject();
+
+            jw2.name("all");
+            jw2.beginObject();
+            jw2.name("model").value(blockMockName);
+            jw2.endObject();
+
+            jw2.endObject();
+            jw2.endObject();
+
+            writer2.close();
 
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -105,48 +87,38 @@ public class GenerateBlockFence {
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_post" + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + "half_" + blockName + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 
             jw.beginObject();
             jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw.name("parent").value("block/fence_post");
+            jw.name("parent").value("block/half_slab");
             jw.name("textures");
             jw.beginObject();
-            jw.name("texture").value(modId + ":blocks/" + textureName);
+            jw.name("bottom").value(modId + ":blocks/" + textureName);
+            jw.name("top").value(modId + ":blocks/" + textureName);
+            jw.name("side").value(modId + ":blocks/" + textureName);
             jw.endObject();
             jw.endObject();
 
             writer.close();
 
-            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_side" + ".json"), "UTF-8");
+            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + "upper_" + blockName + ".json"), "UTF-8");
             JsonWriter jw2 = gson.newJsonWriter(writer2);
 
             jw2.beginObject();
             jw2.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw2.name("parent").value("block/fence_side");
+            jw2.name("parent").value("block/upper_slab");
             jw2.name("textures");
             jw2.beginObject();
-            jw2.name("texture").value(modId + ":blocks/" + textureName);
+            jw2.name("bottom").value(modId + ":blocks/" + textureName);
+            jw2.name("top").value(modId + ":blocks/" + textureName);
+            jw2.name("side").value(modId + ":blocks/" + textureName);
             jw2.endObject();
             jw2.endObject();
 
             writer2.close();
-
-            Writer writer3 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_inventory" + ".json"), "UTF-8");
-            JsonWriter jw3 = gson.newJsonWriter(writer3);
-
-            jw3.beginObject();
-            jw3.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw3.name("parent").value("block/fence_inventory");
-            jw3.name("textures");
-            jw3.beginObject();
-            jw3.name("texture").value(modId + ":blocks/" + textureName);
-            jw3.endObject();
-            jw3.endObject();
-
-            writer3.close();
 
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -174,7 +146,7 @@ public class GenerateBlockFence {
             jw.beginObject();
 
             jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw.name("parent").value(modId + ":block/" + blockName + "_inventory");
+            jw.name("parent").value(modId + ":block/" + "half_" + blockName);
 
             jw.endObject();
 

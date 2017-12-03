@@ -1,4 +1,4 @@
-package com.miningmark48.jsongen.generate;
+package com.miningmark48.jsongen.generate.block;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -6,9 +6,9 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.*;
 
-public class GenerateBlockSlab {
+public class GenerateBlockPressurePlate {
 
-    public static void genBlock(String modId, String blockName, String textureName, String blockMockName, String path){
+    public static void genBlock(String modId, String blockName, String textureName, String path){
 
         File fileDir = new File(path + "\\blockstates\\");
         if(!fileDir.exists()){
@@ -26,44 +26,20 @@ public class GenerateBlockSlab {
             jw.name("variants");
             jw.beginObject();
 
-            jw.name("half=bottom");
+            jw.name("powered=false");
             jw.beginObject();
-            jw.name("model").value("half_" + blockName);
+            jw.name("model").value(modId + ":" + blockName + "_up");
             jw.endObject();
 
-            jw.name("half=top");
+            jw.name("powered=true");
             jw.beginObject();
-            jw.name("model").value("upper_" + blockName);
+            jw.name("model").value(modId + ":" + blockName + "_down");
             jw.endObject();
 
             jw.endObject();
             jw.endObject();
 
             writer.close();
-
-            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_double" + ".json"), "UTF-8");
-            Gson gson2 = new GsonBuilder().setPrettyPrinting().create();
-            JsonWriter jw2 = gson2.newJsonWriter(writer2);
-
-            jw2.beginObject();
-            jw2.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw2.name("variants");
-            jw2.beginObject();
-
-            jw2.name("normal");
-            jw2.beginObject();
-            jw2.name("model").value(blockMockName);
-            jw2.endObject();
-
-            jw2.name("all");
-            jw2.beginObject();
-            jw2.name("model").value(blockMockName);
-            jw2.endObject();
-
-            jw2.endObject();
-            jw2.endObject();
-
-            writer2.close();
 
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -87,34 +63,30 @@ public class GenerateBlockSlab {
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + "half_" + blockName + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_up" + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 
             jw.beginObject();
             jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw.name("parent").value("block/half_slab");
+            jw.name("parent").value("block/pressure_plate_up");
             jw.name("textures");
             jw.beginObject();
-            jw.name("bottom").value(modId + ":blocks/" + textureName);
-            jw.name("top").value(modId + ":blocks/" + textureName);
-            jw.name("side").value(modId + ":blocks/" + textureName);
+            jw.name("texture").value(modId + ":blocks/" + textureName);
             jw.endObject();
             jw.endObject();
 
             writer.close();
 
-            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + "upper_" + blockName + ".json"), "UTF-8");
+            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_down" + ".json"), "UTF-8");
             JsonWriter jw2 = gson.newJsonWriter(writer2);
 
             jw2.beginObject();
             jw2.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw2.name("parent").value("block/upper_slab");
+            jw2.name("parent").value("block/pressure_plate_down");
             jw2.name("textures");
             jw2.beginObject();
-            jw2.name("bottom").value(modId + ":blocks/" + textureName);
-            jw2.name("top").value(modId + ":blocks/" + textureName);
-            jw2.name("side").value(modId + ":blocks/" + textureName);
+            jw2.name("texture").value(modId + ":blocks/" + textureName);
             jw2.endObject();
             jw2.endObject();
 
@@ -146,7 +118,7 @@ public class GenerateBlockSlab {
             jw.beginObject();
 
             jw.name("_comment").value("Generated using MiningMark48's JSON Generator.");
-            jw.name("parent").value(modId + ":block/" + "half_" + blockName);
+            jw.name("parent").value(modId + ":block/" + blockName + "_up");
 
             jw.endObject();
 

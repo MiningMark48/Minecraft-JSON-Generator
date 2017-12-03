@@ -1,7 +1,7 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.reference.Reference;
-import com.miningmark48.jsongen.generate.GenerateBlock;
+import com.miningmark48.jsongen.generate.block.GenerateBlock;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -84,7 +84,7 @@
                         <Insets left="15.0" right="15.0" top="15.0" />
                      </GridPane.margin>
                   </VBox>
-                  <Button maxHeight="35.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGenerateButtonAction" text="Generate" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button maxHeight="35.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGenerateButtonAction" styleClass="success" text="Generate" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <tooltip>
                         <Tooltip text="Generate JSON" />
                      </tooltip>
@@ -119,7 +119,7 @@
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <TextField fx:id="fieldExportPath" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="260.0" text="./export" />
-                              <Button fx:id="buttonPath" mnemonicParsing="false" onAction="#handlePathButtonAction" text="...">
+                              <Button fx:id="buttonPath" minWidth="29.0" mnemonicParsing="false" onAction="#handlePathButtonAction" prefHeight="32.0" prefWidth="40.0" styleClass="warning" text="...">
                                  <HBox.margin>
                                     <Insets left="5.0" />
                                  </HBox.margin>

@@ -154,14 +154,14 @@
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button fx:id="buttonPath" mnemonicParsing="false" onAction="#handlePathButtonAction" text="...">
+                        <Button fx:id="buttonPath" mnemonicParsing="false" onAction="#handlePathButtonAction" styleClass="warning" text="...">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
-                  <Button fx:id="buttonGenerate" maxHeight="35.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGenerateButtonAction" text="Generate" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+                  <Button fx:id="buttonGenerate" maxHeight="35.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGenerateButtonAction" styleClass="success" text="Generate" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets left="15.0" right="15.0" />
                      </GridPane.margin>

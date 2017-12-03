@@ -1,6 +1,7 @@
 package com.miningmark48.jsongen.javafx;
 
 import com.miningmark48.jsongen.Reference;
+import com.sun.org.apache.regexp.internal.RE;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -10,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+
+import java.util.logging.Logger;
 
 public class Main extends Application {
 
@@ -21,7 +24,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/main.fxml"));
 
-        Scene scene = new Scene(root, 800, 400);
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
         stage.setTitle("Minecraft JSON Generator for Minecraft " + Reference.gameVersion + " by " + Reference.author);
         stage.setScene(scene);

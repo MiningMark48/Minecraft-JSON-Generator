@@ -2,6 +2,7 @@ package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.Reference;
 import com.miningmark48.jsongen.javafx.ReferenceAlerts;
+import com.miningmark48.jsongen.javafx.ReferenceScenes;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -33,7 +34,7 @@ public class MainController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks.fxml"));
 
-        Scene scene = new Scene(root, 800, 400);
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
         stage.setTitle("Block Generator");
         stage.setScene(scene);
@@ -45,7 +46,7 @@ public class MainController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/items.fxml"));
 
-        Scene scene = new Scene(root, 800, 400);
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
         stage.setTitle("Item Generator");
         stage.setScene(scene);
@@ -57,7 +58,7 @@ public class MainController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/modinfo.fxml"));
 
-        Scene scene = new Scene(root, 800, 400);
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
         stage.setTitle("Mod Info Generator");
         stage.setScene(scene);

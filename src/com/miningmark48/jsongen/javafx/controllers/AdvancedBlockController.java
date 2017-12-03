@@ -2,6 +2,7 @@ package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.Reference;
 import com.miningmark48.jsongen.javafx.ReferenceAlerts;
+import com.miningmark48.jsongen.javafx.ReferenceScenes;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,7 +32,7 @@ public class AdvancedBlockController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/oriented.fxml"));
 
-        Scene scene = new Scene(root, 800, 400);
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
         stage.setTitle("Block - Oriented Generator");
         stage.setScene(scene);
@@ -43,7 +44,7 @@ public class AdvancedBlockController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/fence.fxml"));
 
-        Scene scene = new Scene(root, 800, 400);
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
         stage.setTitle("Block - Fence Generator");
         stage.setScene(scene);
@@ -55,7 +56,7 @@ public class AdvancedBlockController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/pressure_plate.fxml"));
 
-        Scene scene = new Scene(root, 800, 400);
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
         stage.setTitle("Block - Pressure Plate Generator");
         stage.setScene(scene);
@@ -67,7 +68,7 @@ public class AdvancedBlockController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/slab.fxml"));
 
-        Scene scene = new Scene(root, 800, 400);
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
         stage.setTitle("Block - Slab Generator");
         stage.setScene(scene);

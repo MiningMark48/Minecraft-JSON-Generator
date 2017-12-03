@@ -40,7 +40,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleBlockButtonAction" prefHeight="50.0" prefWidth="125.0" text="Blocks" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#handleBlockButtonAction" prefHeight="50.0" prefWidth="125.0" styleClass="success" text="Blocks" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -51,7 +51,7 @@
                         <Tooltip text="Generate a block model" />
                      </tooltip>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#handleItemButtonAction" prefHeight="50.0" prefWidth="125.0" text="Items" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#handleItemButtonAction" prefHeight="50.0" prefWidth="125.0" styleClass="warning" text="Items" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -67,7 +67,7 @@
                         <Font name="Segoe UI" size="34.0" />
                      </font>
                   </Text>
-                  <Button mnemonicParsing="false" onAction="#handleModInfoButtonAction" prefHeight="50.0" prefWidth="125.0" text="Mod Info" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#handleModInfoButtonAction" prefHeight="50.0" prefWidth="125.0" styleClass="info" text="Mod Info" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

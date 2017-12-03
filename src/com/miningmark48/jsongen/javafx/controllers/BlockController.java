@@ -3,6 +3,7 @@ package com.miningmark48.jsongen.javafx.controllers;
 import com.miningmark48.jsongen.Reference;
 import com.miningmark48.jsongen.generate.GenerateBlock;
 import com.miningmark48.jsongen.javafx.ReferenceAlerts;
+import com.miningmark48.jsongen.javafx.ReferenceScenes;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,7 +48,7 @@ public class BlockController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced.fxml"));
 
-        Scene scene = new Scene(root, 800, 400);
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
         stage.setTitle("Block Generator - Advanced");
         stage.setScene(scene);

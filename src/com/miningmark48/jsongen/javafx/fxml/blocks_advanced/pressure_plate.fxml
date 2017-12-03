@@ -45,7 +45,7 @@
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Block - Pressure Plate Generator" textAlignment="CENTER" wrappingWidth="469.767578125" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                      <font>
-                        <Font name="Segoe UI" size="34.0" />
+                        <Font name="Segoe UI" size="33.0" />
                      </font>
                   </Text>
                   <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">

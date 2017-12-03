@@ -36,8 +36,7 @@ public class BlockController {
     @FXML private void handlePathButtonAction(ActionEvent event) {
         DirectoryChooser chooser = new DirectoryChooser();
         chooser.setTitle("Choose resource directory");
-        File defaultDirectory = new File("./export");
-        chooser.setInitialDirectory(defaultDirectory);
+        chooser.setInitialDirectory(new File(System.getProperty("user.home"), "Desktop"));
         File selectedDirectory = chooser.showDialog(new Stage());
         if (selectedDirectory != null) fieldExportPath.setText(selectedDirectory.getPath());
     }

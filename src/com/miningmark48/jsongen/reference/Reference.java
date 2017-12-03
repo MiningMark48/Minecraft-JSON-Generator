@@ -10,6 +10,7 @@ public class Reference {
     public static String version = "1.0.0";
     public static String gameVersion = "1.9.4+";
     public static String iconURL = "http://miningmark48.xyz/img/projects/mcjsongen/icon.png";
+    public static String styleSheetURL = "http://miningmark48.xyz/projects/mcjsongen/res/theme.css";
 
     public static Alert aboutAlert = new Alert(Alert.AlertType.INFORMATION);
     public static Alert generatedAlert = new Alert(Alert.AlertType.INFORMATION);
@@ -26,7 +27,7 @@ public class Reference {
 
     public static Scene getDefaultScene(Parent root) {
         Scene scene = new Scene(root, 800, 400);
-        scene.getStylesheets().add("http://miningmark48.xyz/projects/mcjsongen/res/theme.css");
+        scene.getStylesheets().add(styleSheetURL);
         return scene;
     }
 

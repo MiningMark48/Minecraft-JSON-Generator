@@ -67,7 +67,7 @@
                         <Font name="Segoe UI" size="34.0" />
                      </font>
                   </Text>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="Mod Info" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#handleModInfoButtonAction" prefHeight="50.0" prefWidth="125.0" text="Mod Info" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

@@ -53,4 +53,16 @@ public class MainController {
         stage.show();
     }
 
+    @FXML private void handleModInfoButtonAction(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/modinfo.fxml"));
+
+        Scene scene = new Scene(root, 800, 400);
+
+        stage.setTitle("Mod Info Generator");
+        stage.setScene(scene);
+        stage.getIcons().add(new Image(Reference.iconURL));
+        stage.show();
+    }
+
 }

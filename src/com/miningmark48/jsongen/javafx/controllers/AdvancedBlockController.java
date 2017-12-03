@@ -27,6 +27,18 @@ public class AdvancedBlockController {
         ReferenceAlerts.aboutAlert.showAndWait();
     }
 
+    @FXML private void handleOrientedButtonAction(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/oriented.fxml"));
+
+        Scene scene = new Scene(root, 800, 400);
+
+        stage.setTitle("Block - Oriented Generator");
+        stage.setScene(scene);
+        stage.getIcons().add(new Image(Reference.iconURL));
+        stage.show();
+    }
+
     @FXML private void handleFenceButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/fence.fxml"));

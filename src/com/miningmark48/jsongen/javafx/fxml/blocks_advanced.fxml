@@ -55,7 +55,7 @@
                         <Insets left="15.0" right="15.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="135.0" text="Oriented" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#handleOrientedButtonAction" prefHeight="20.0" prefWidth="135.0" text="Oriented" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="15.0" right="15.0" />
                      </GridPane.margin>

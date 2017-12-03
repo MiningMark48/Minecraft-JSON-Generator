@@ -1,4 +1,4 @@
-package com.miningmark48.jsongen;
+package com.miningmark48.jsongen.reference;
 
 public class Reference {
 

@@ -1,65 +1,37 @@
-package com.miningmark48.jsongen;
+package com.miningmark48.jsongen.javafx;
 
-import com.miningmark48.jsongen.gui.MainWindow;
-import com.miningmark48.jsongen.util.VersionCheck;
+import com.miningmark48.jsongen.Reference;
+import com.sun.org.apache.regexp.internal.RE;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
-import javax.swing.*;
-import java.awt.*;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.util.logging.Logger;
 
-public class Main {
+public class Main extends Application {
 
-    // Version checking instance
-    public static VersionCheck versionCheck;
-    public static boolean haveWarnedVersionOutOfDate = false;
-
-    public static void main(String[] args){
-
-        versionCheck = new VersionCheck();
-        Thread versionCheckThread = new Thread(versionCheck, "Version Check");
-        versionCheckThread.start();
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        MainWindow mainWindow = new MainWindow();
-        mainWindow.setSize(800, 400);
-        mainWindow.setVisible(true);
-        mainWindow.setLocationRelativeTo(null);
-
-        checkForUpdates();
-
+    public static void main(String[] args) {
+        launch(args);
     }
 
-    public static void checkForUpdates(){
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/main.fxml"));
 
-        if(!Main.haveWarnedVersionOutOfDate) {
-            if (!versionCheck.isLatestVersion()) {
+        Scene scene = ReferenceScenes.getDefaultScene(root);
 
-                JOptionPane opt = new JOptionPane();
+        stage.setTitle("Minecraft JSON Generator for Minecraft " + Reference.gameVersion + " by " + Reference.author);
+        stage.setScene(scene);
+        stage.setOnCloseRequest(event -> Platform.exit());
+        stage.getIcons().add(new Image(Reference.iconURL));
+        stage.show();
 
-                int result = opt.showConfirmDialog(null, "There is an update available, download now?", "Updates Available", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
-
-                if (result == JOptionPane.YES_OPTION) {
-                    if (Desktop.isDesktopSupported()) {
-                        try {
-                            Desktop.getDesktop().browse(new URI("http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/2733203-minecraft-json-generator"));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (URISyntaxException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }
-        }
-
+        ReferenceAlerts.init();
     }
-
 }
-

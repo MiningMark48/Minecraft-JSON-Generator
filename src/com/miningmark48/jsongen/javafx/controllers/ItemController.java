@@ -1,14 +1,10 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
-import com.miningmark48.jsongen.generate.GenerateBlock;
 import com.miningmark48.jsongen.generate.GenerateItem;
-import com.miningmark48.jsongen.javafx.ReferenceAlerts;
+import com.miningmark48.jsongen.reference.ReferenceAlerts;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
@@ -16,7 +12,6 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.IOException;
 
 public class ItemController {
 

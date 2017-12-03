@@ -1,8 +1,7 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
-import com.miningmark48.jsongen.generate.GenerateBlockFence;
 import com.miningmark48.jsongen.generate.GenerateBlockSlab;
-import com.miningmark48.jsongen.javafx.ReferenceAlerts;
+import com.miningmark48.jsongen.reference.ReferenceAlerts;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -1,7 +1,7 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.generate.GenerateBlockOriented;
-import com.miningmark48.jsongen.javafx.ReferenceAlerts;
+import com.miningmark48.jsongen.reference.ReferenceAlerts;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

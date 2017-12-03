@@ -1,4 +1,4 @@
-package com.miningmark48.jsongen.javafx;
+package com.miningmark48.jsongen.reference;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;

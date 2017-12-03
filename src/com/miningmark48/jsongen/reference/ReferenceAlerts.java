@@ -1,6 +1,5 @@
-package com.miningmark48.jsongen.javafx;
+package com.miningmark48.jsongen.reference;
 
-import com.miningmark48.jsongen.Reference;
 import javafx.scene.control.Alert;
 
 public class ReferenceAlerts {

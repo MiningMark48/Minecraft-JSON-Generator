@@ -1,18 +1,15 @@
-package com.miningmark48.jsongen.javafx;
+package com.miningmark48.jsongen;
 
-import com.miningmark48.jsongen.Reference;
-import com.sun.org.apache.regexp.internal.RE;
+import com.miningmark48.jsongen.reference.Reference;
+import com.miningmark48.jsongen.reference.ReferenceAlerts;
+import com.miningmark48.jsongen.reference.ReferenceScenes;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-
-import java.util.logging.Logger;
 
 public class Main extends Application {
 
@@ -22,7 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("javafx/fxml/main.fxml"));
 
         Scene scene = ReferenceScenes.getDefaultScene(root);
 

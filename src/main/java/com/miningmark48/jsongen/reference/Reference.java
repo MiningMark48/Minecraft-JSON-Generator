@@ -1,8 +1,15 @@
 package com.miningmark48.jsongen.reference;
 
+import com.miningmark48.jsongen.Main;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Reference {
 
@@ -29,6 +36,38 @@ public class Reference {
         Scene scene = new Scene(root, 800, 400);
         scene.getStylesheets().add(styleSheetURL);
         return scene;
+    }
+
+    public static Scene getMainScene() {
+        Scene scene = null;
+        try {
+            scene = getDefaultScene(FXMLLoader.load(Main.INSTANCE.getClass().getResource("/fxml/main.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return scene;
+    }
+
+    public static Stage getDefaultStage() {
+        Scene scene = null;
+        try {
+            scene = getDefaultScene(FXMLLoader.load(Main.INSTANCE.getClass().getResource("/fxml/main.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Minecraft JSON Generator for Minecraft " + Reference.gameVersion + " by " + Reference.author);
+        stage.setScene(scene);
+        stage.setOnCloseRequest(event -> Platform.exit());
+        stage.getIcons().add(new Image(Reference.iconURL));
+        return stage;
+    }
+
+    public static void showScene(Scene scene) {
+        Stage stage = Main.getMainStage();
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

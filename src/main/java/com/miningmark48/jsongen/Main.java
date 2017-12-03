@@ -11,22 +11,25 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static Main INSTANCE = new Main();
+
+    public static Stage mainStage;
+
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"));
 
-        Scene scene = Reference.getDefaultScene(root);
-
-        stage.setTitle("Minecraft JSON Generator for Minecraft " + Reference.gameVersion + " by " + Reference.author);
-        stage.setScene(scene);
-        stage.setOnCloseRequest(event -> Platform.exit());
-        stage.getIcons().add(new Image(Reference.iconURL));
+        stage = Reference.getDefaultStage();
         stage.show();
 
+        mainStage = stage;
         Reference.init();
+    }
+
+    public static Stage getMainStage() {
+        return mainStage;
     }
 }

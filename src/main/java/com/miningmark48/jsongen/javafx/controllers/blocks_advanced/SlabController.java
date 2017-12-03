@@ -1,5 +1,6 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
+import com.miningmark48.jsongen.Main;
 import com.miningmark48.jsongen.generate.block.GenerateBlockSlab;
 import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
@@ -27,6 +28,10 @@ public class SlabController {
 
     @FXML private void handleAboutButtonAction(ActionEvent event){
         Reference.aboutAlert.showAndWait();
+    }
+
+    @FXML private void handleMenuButtonAction(ActionEvent event) {
+        Main.mainStage.setScene(Reference.getMainScene());
     }
 
     @FXML private void handlePathButtonAction(ActionEvent event) {

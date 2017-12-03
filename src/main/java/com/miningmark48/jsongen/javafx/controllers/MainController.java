@@ -1,5 +1,6 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
+import com.miningmark48.jsongen.Main;
 import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -26,39 +27,15 @@ public class MainController {
     }
 
     @FXML private void handleBlockButtonAction(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/blocks.fxml"));
-
-        Scene scene = Reference.getDefaultScene(root);
-
-        stage.setTitle("Block Generator");
-        stage.setScene(scene);
-        stage.getIcons().add(new Image(Reference.iconURL));
-        stage.show();
+        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/blocks.fxml"))));
     }
 
     @FXML private void handleItemButtonAction(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/items.fxml"));
-
-        Scene scene = Reference.getDefaultScene(root);
-
-        stage.setTitle("Item Generator");
-        stage.setScene(scene);
-        stage.getIcons().add(new Image(Reference.iconURL));
-        stage.show();
+        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/items.fxml"))));
     }
 
     @FXML private void handleModInfoButtonAction(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/modinfo.fxml"));
-
-        Scene scene = Reference.getDefaultScene(root);
-
-        stage.setTitle("Mod Info Generator");
-        stage.setScene(scene);
-        stage.getIcons().add(new Image(Reference.iconURL));
-        stage.show();
+        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/modinfo.fxml"))));
     }
 
 }

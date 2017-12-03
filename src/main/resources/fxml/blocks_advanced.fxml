@@ -115,6 +115,11 @@
                         <Insets left="15.0" right="15.0" />
                      </GridPane.margin>
                   </Button>
+                   <Button mnemonicParsing="false" onAction="#handleMenuButtonAction" styleClass="danger" text="Menu" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                       <GridPane.margin>
+                           <Insets left="15.0" top="15.0" />
+                       </GridPane.margin>
+                   </Button>
                </children>
             </GridPane>
          </children>

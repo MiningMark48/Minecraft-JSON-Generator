@@ -1,7 +1,9 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
-import com.miningmark48.jsongen.reference.Reference;
+import com.miningmark48.jsongen.Main;
 import com.miningmark48.jsongen.generate.block.GenerateBlock;
+import com.miningmark48.jsongen.reference.Reference;
+import com.sun.org.apache.regexp.internal.RE;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,6 +35,10 @@ public class BlockController {
         Reference.aboutAlert.showAndWait();
     }
 
+    @FXML private void handleMenuButtonAction(ActionEvent event) {
+        Main.mainStage.setScene(Reference.getMainScene());
+    }
+
     @FXML private void handlePathButtonAction(ActionEvent event) {
         DirectoryChooser chooser = new DirectoryChooser();
         chooser.setTitle("Choose resource directory");
@@ -42,15 +48,7 @@ public class BlockController {
     }
 
     @FXML private void handleAdvancedButtonAction(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced.fxml"));
-
-        Scene scene = Reference.getDefaultScene(root);
-
-        stage.setTitle("Block Generator - Advanced");
-        stage.setScene(scene);
-        stage.getIcons().add(new Image(Reference.iconURL));
-        stage.show();
+        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced.fxml"))));
     }
 
     @FXML private void handleGenerateButtonAction(ActionEvent event) {

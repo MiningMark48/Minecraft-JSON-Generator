@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.miningmark48.jsongen.Main;
 import com.miningmark48.jsongen.generate.GenerateModInfo;
 import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
@@ -35,6 +36,10 @@ public class ModInfoController {
 
     @FXML private void handleCloseButtonAction(ActionEvent event){
         Platform.exit();
+    }
+
+    @FXML private void handleMenuButtonAction(ActionEvent event) {
+        Main.mainStage.setScene(Reference.getMainScene());
     }
 
     @FXML private void handleImportButtonAction(ActionEvent event){

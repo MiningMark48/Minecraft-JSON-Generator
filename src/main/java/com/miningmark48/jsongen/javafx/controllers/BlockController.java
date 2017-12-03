@@ -44,7 +44,7 @@ public class BlockController {
 
     @FXML private void handleAdvancedButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced.fxml"));
 
         Scene scene = Reference.getDefaultScene(root);
 

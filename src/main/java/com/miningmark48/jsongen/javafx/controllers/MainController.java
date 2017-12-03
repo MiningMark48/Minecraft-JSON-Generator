@@ -27,7 +27,7 @@ public class MainController {
 
     @FXML private void handleBlockButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/blocks.fxml"));
 
         Scene scene = Reference.getDefaultScene(root);
 
@@ -39,7 +39,7 @@ public class MainController {
 
     @FXML private void handleItemButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/items.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/items.fxml"));
 
         Scene scene = Reference.getDefaultScene(root);
 
@@ -51,7 +51,7 @@ public class MainController {
 
     @FXML private void handleModInfoButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/modinfo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/modinfo.fxml"));
 
         Scene scene = Reference.getDefaultScene(root);
 

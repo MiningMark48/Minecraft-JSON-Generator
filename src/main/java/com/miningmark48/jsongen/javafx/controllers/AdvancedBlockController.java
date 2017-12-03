@@ -27,7 +27,7 @@ public class AdvancedBlockController {
 
     @FXML private void handleOrientedButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/oriented.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced/oriented.fxml"));
 
         Scene scene = Reference.getDefaultScene(root);
 
@@ -39,7 +39,7 @@ public class AdvancedBlockController {
 
     @FXML private void handleFenceButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/fence.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced/fence.fxml"));
 
         Scene scene = Reference.getDefaultScene(root);
 
@@ -51,7 +51,7 @@ public class AdvancedBlockController {
 
     @FXML private void handlePressurePlateButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/pressure_plate.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced/pressure_plate.fxml"));
 
         Scene scene = Reference.getDefaultScene(root);
 
@@ -63,7 +63,7 @@ public class AdvancedBlockController {
 
     @FXML private void handleSlabButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/slab.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced/slab.fxml"));
 
         Scene scene = Reference.getDefaultScene(root);
 

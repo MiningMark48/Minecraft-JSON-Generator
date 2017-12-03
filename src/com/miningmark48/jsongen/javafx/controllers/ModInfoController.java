@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.miningmark48.jsongen.generate.GenerateModInfo;
-import com.miningmark48.jsongen.reference.ReferenceAlerts;
+import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -72,7 +72,7 @@ public class ModInfoController {
     }
 
     @FXML private void handleAboutButtonAction(ActionEvent event){
-        ReferenceAlerts.aboutAlert.showAndWait();
+        Reference.aboutAlert.showAndWait();
     }
 
     @FXML private void handlePathButtonAction(ActionEvent event) {
@@ -95,7 +95,7 @@ public class ModInfoController {
         fieldURL.clear();
         fieldDesc.clear();
         fieldCredit.clear();
-        ReferenceAlerts.generatedAlert.showAndWait();
+        Reference.generatedAlert.showAndWait();
     }
 
 }

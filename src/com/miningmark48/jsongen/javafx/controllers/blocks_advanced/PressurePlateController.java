@@ -1,7 +1,7 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.generate.GenerateBlockPressurePlate;
-import com.miningmark48.jsongen.reference.ReferenceAlerts;
+import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +25,7 @@ public class PressurePlateController {
     }
 
     @FXML private void handleAboutButtonAction(ActionEvent event){
-        ReferenceAlerts.aboutAlert.showAndWait();
+        Reference.aboutAlert.showAndWait();
     }
 
     @FXML private void handlePathButtonAction(ActionEvent event) {
@@ -42,7 +42,7 @@ public class PressurePlateController {
 
         fieldBlockName.clear();
         fieldTextureName.clear();
-        ReferenceAlerts.generatedAlert.showAndWait();
+        Reference.generatedAlert.showAndWait();
     }
 
 }

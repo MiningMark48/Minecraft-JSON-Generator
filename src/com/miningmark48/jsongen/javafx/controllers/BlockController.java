@@ -2,8 +2,6 @@ package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.reference.Reference;
 import com.miningmark48.jsongen.generate.GenerateBlock;
-import com.miningmark48.jsongen.reference.ReferenceAlerts;
-import com.miningmark48.jsongen.reference.ReferenceScenes;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,7 +30,7 @@ public class BlockController {
     }
 
     @FXML private void handleAboutButtonAction(ActionEvent event){
-        ReferenceAlerts.aboutAlert.showAndWait();
+        Reference.aboutAlert.showAndWait();
     }
 
     @FXML private void handlePathButtonAction(ActionEvent event) {
@@ -48,7 +46,7 @@ public class BlockController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced.fxml"));
 
-        Scene scene = ReferenceScenes.getDefaultScene(root);
+        Scene scene = Reference.getDefaultScene(root);
 
         stage.setTitle("Block Generator - Advanced");
         stage.setScene(scene);
@@ -61,7 +59,7 @@ public class BlockController {
 
         fieldBlockName.clear();
         fieldTextureName.clear();
-        ReferenceAlerts.generatedAlert.showAndWait();
+        Reference.generatedAlert.showAndWait();
     }
 
 }

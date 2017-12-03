@@ -1,8 +1,6 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.reference.Reference;
-import com.miningmark48.jsongen.reference.ReferenceAlerts;
-import com.miningmark48.jsongen.reference.ReferenceScenes;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,14 +22,14 @@ public class MainController {
     }
 
     @FXML private void handleAboutButtonAction(ActionEvent event){
-        ReferenceAlerts.aboutAlert.showAndWait();
+        Reference.aboutAlert.showAndWait();
     }
 
     @FXML private void handleBlockButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks.fxml"));
 
-        Scene scene = ReferenceScenes.getDefaultScene(root);
+        Scene scene = Reference.getDefaultScene(root);
 
         stage.setTitle("Block Generator");
         stage.setScene(scene);
@@ -43,7 +41,7 @@ public class MainController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/items.fxml"));
 
-        Scene scene = ReferenceScenes.getDefaultScene(root);
+        Scene scene = Reference.getDefaultScene(root);
 
         stage.setTitle("Item Generator");
         stage.setScene(scene);
@@ -55,7 +53,7 @@ public class MainController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/modinfo.fxml"));
 
-        Scene scene = ReferenceScenes.getDefaultScene(root);
+        Scene scene = Reference.getDefaultScene(root);
 
         stage.setTitle("Mod Info Generator");
         stage.setScene(scene);

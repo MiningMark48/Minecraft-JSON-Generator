@@ -1,7 +1,7 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.generate.GenerateBlockSlab;
-import com.miningmark48.jsongen.reference.ReferenceAlerts;
+import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +26,7 @@ public class SlabController {
     }
 
     @FXML private void handleAboutButtonAction(ActionEvent event){
-        ReferenceAlerts.aboutAlert.showAndWait();
+        Reference.aboutAlert.showAndWait();
     }
 
     @FXML private void handlePathButtonAction(ActionEvent event) {
@@ -44,7 +44,7 @@ public class SlabController {
         fieldBlockName.clear();
         fieldTextureName.clear();
         fieldMockName.clear();
-        ReferenceAlerts.generatedAlert.showAndWait();
+        Reference.generatedAlert.showAndWait();
     }
 
 }

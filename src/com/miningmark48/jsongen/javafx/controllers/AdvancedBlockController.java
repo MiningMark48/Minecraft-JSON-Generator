@@ -1,8 +1,6 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.reference.Reference;
-import com.miningmark48.jsongen.reference.ReferenceAlerts;
-import com.miningmark48.jsongen.reference.ReferenceScenes;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,14 +22,14 @@ public class AdvancedBlockController {
     }
 
     @FXML private void handleAboutButtonAction(ActionEvent event){
-        ReferenceAlerts.aboutAlert.showAndWait();
+        Reference.aboutAlert.showAndWait();
     }
 
     @FXML private void handleOrientedButtonAction(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/oriented.fxml"));
 
-        Scene scene = ReferenceScenes.getDefaultScene(root);
+        Scene scene = Reference.getDefaultScene(root);
 
         stage.setTitle("Block - Oriented Generator");
         stage.setScene(scene);
@@ -43,7 +41,7 @@ public class AdvancedBlockController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/fence.fxml"));
 
-        Scene scene = ReferenceScenes.getDefaultScene(root);
+        Scene scene = Reference.getDefaultScene(root);
 
         stage.setTitle("Block - Fence Generator");
         stage.setScene(scene);
@@ -55,7 +53,7 @@ public class AdvancedBlockController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/pressure_plate.fxml"));
 
-        Scene scene = ReferenceScenes.getDefaultScene(root);
+        Scene scene = Reference.getDefaultScene(root);
 
         stage.setTitle("Block - Pressure Plate Generator");
         stage.setScene(scene);
@@ -67,7 +65,7 @@ public class AdvancedBlockController {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/blocks_advanced/slab.fxml"));
 
-        Scene scene = ReferenceScenes.getDefaultScene(root);
+        Scene scene = Reference.getDefaultScene(root);
 
         stage.setTitle("Block - Slab Generator");
         stage.setScene(scene);

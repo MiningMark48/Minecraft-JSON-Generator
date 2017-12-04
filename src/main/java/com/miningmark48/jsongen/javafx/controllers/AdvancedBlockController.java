@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Ref;
 
 public class AdvancedBlockController {
 
@@ -28,7 +29,7 @@ public class AdvancedBlockController {
     }
 
     @FXML private void handleMenuButtonAction(ActionEvent event) {
-        Main.mainStage.setScene(Reference.getMainScene());
+        Reference.setRoot(FXMLFiles.FXML_MAIN);
     }
 
     @FXML private void handleOrientedButtonAction(ActionEvent event) throws IOException {

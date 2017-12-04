@@ -37,7 +37,7 @@ public class BlockController {
     }
 
     @FXML private void handleMenuButtonAction(ActionEvent event) {
-        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_MAIN);
+        Reference.setRoot(FXMLFiles.FXML_MAIN);
     }
 
     @FXML private void handlePathButtonAction(ActionEvent event) {

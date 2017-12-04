@@ -1,7 +1,7 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
-import com.miningmark48.jsongen.Main;
 import com.miningmark48.jsongen.generate.block.GenerateBlockSlab;
+import com.miningmark48.jsongen.reference.FXMLFiles;
 import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -31,7 +31,7 @@ public class SlabController {
     }
 
     @FXML private void handleMenuButtonAction(ActionEvent event) {
-        Main.mainStage.setScene(Reference.getMainScene());
+        Reference.setRoot(FXMLFiles.FXML_ADVANCEDBLOCKS);
     }
 
     @FXML private void handlePathButtonAction(ActionEvent event) {

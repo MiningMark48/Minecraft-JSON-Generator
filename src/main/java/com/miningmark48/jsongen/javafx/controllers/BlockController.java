@@ -49,7 +49,7 @@ public class BlockController {
     }
 
     @FXML private void handleAdvancedButtonAction(ActionEvent event) throws IOException {
-        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_ADVANCEDBLOCKS);
+        Reference.setRoot(FXMLFiles.FXML_ADVANCEDBLOCKS);
     }
 
     @FXML private void handleGenerateButtonAction(ActionEvent event) {

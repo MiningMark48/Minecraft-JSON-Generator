@@ -8,16 +8,19 @@ import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.net.URL;
+
 public class Reference {
 
     public static String author = "MiningMark48";
     public static String version = "1.0.0";
     public static String gameVersion = "1.9.4+";
     public static String iconURL = "http://miningmark48.xyz/img/projects/mcjsongen/icon.png";
-    public static String styleSheetURL = "http://miningmark48.xyz/projects/mcjsongen/res/theme.css";
+    public static String styleSheetResource = Main.INSTANCE.getClass().getResource("/bootstrap2.css").toString();
 
     public static Alert aboutAlert = new Alert(Alert.AlertType.INFORMATION);
     public static Alert generatedAlert = new Alert(Alert.AlertType.INFORMATION);
+
 
     public static void init() {
         aboutAlert.setTitle("About");
@@ -31,7 +34,7 @@ public class Reference {
 
     public static Scene getDefaultScene(Parent root) {
         Scene scene = new Scene(root, 800, 400);
-        scene.getStylesheets().add(styleSheetURL);
+        scene.getStylesheets().add(styleSheetResource);
         return scene;
     }
 

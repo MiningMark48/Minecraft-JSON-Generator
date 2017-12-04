@@ -29,8 +29,6 @@ public class Reference {
         generatedAlert.setContentText("JSON was successfully generated.");
     }
 
-
-
     public static Scene getDefaultScene(Parent root) {
         Scene scene = new Scene(root, 800, 400);
         scene.getStylesheets().add(styleSheetURL);

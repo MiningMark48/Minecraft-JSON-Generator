@@ -1,7 +1,6 @@
 package com.miningmark48.jsongen.reference;
 
 import com.miningmark48.jsongen.Main;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 import java.io.IOException;
@@ -31,7 +30,6 @@ public class FXMLFiles {
             FXML_ADVANCEDBLOCKS_ORIENTED = LOADER_INSTANCE.load(Main.INSTANCE.getClass().getResource("/fxml/blocks_advanced/oriented.fxml"));
             FXML_ADVANCEDBLOCKS_PRESSUREPLATE = LOADER_INSTANCE.load(Main.INSTANCE.getClass().getResource("/fxml/blocks_advanced/pressure_plate.fxml"));
             FXML_ADVANCEDBLOCKS_SLAB = LOADER_INSTANCE.load(Main.INSTANCE.getClass().getResource("/fxml/blocks_advanced/slab.fxml"));
-
         } catch (IOException e) {
             e.printStackTrace();
         }

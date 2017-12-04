@@ -47,7 +47,6 @@ public class Reference {
         Stage stage = new Stage();
         stage.setTitle("Minecraft JSON Generator for Minecraft " + Reference.gameVersion + " by " + Reference.author);
         stage.setScene(scene);
-        stage.setOnCloseRequest(event -> Platform.exit());
         stage.getIcons().add(new Image(Reference.iconURL));
         return stage;
     }

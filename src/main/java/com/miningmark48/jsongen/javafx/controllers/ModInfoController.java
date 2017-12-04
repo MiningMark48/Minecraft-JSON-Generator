@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.miningmark48.jsongen.Main;
 import com.miningmark48.jsongen.generate.GenerateModInfo;
+import com.miningmark48.jsongen.reference.FXMLFiles;
 import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -39,7 +40,7 @@ public class ModInfoController {
     }
 
     @FXML private void handleMenuButtonAction(ActionEvent event) {
-        Main.mainStage.setScene(Reference.getMainScene());
+        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_MAIN);
     }
 
     @FXML private void handleImportButtonAction(ActionEvent event){

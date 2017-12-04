@@ -2,6 +2,7 @@ package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.Main;
 import com.miningmark48.jsongen.generate.block.GenerateBlock;
+import com.miningmark48.jsongen.reference.FXMLFiles;
 import com.miningmark48.jsongen.reference.Reference;
 import com.sun.org.apache.regexp.internal.RE;
 import javafx.application.Platform;
@@ -36,7 +37,7 @@ public class BlockController {
     }
 
     @FXML private void handleMenuButtonAction(ActionEvent event) {
-        Main.mainStage.setScene(Reference.getMainScene());
+        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_MAIN);
     }
 
     @FXML private void handlePathButtonAction(ActionEvent event) {
@@ -48,7 +49,7 @@ public class BlockController {
     }
 
     @FXML private void handleAdvancedButtonAction(ActionEvent event) throws IOException {
-        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced.fxml"))));
+        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_ADVANCEDBLOCKS);
     }
 
     @FXML private void handleGenerateButtonAction(ActionEvent event) {

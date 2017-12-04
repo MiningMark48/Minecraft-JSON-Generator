@@ -2,6 +2,7 @@ package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.Main;
 import com.miningmark48.jsongen.generate.GenerateItem;
+import com.miningmark48.jsongen.reference.FXMLFiles;
 import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -32,7 +33,7 @@ public class ItemController {
     }
 
     @FXML private void handleMenuButtonAction(ActionEvent event) {
-        Main.mainStage.setScene(Reference.getMainScene());
+        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_MAIN);
     }
 
     @FXML private void handlePathButtonAction(ActionEvent event) {

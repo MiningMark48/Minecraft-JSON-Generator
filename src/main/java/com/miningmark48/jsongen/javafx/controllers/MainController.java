@@ -1,16 +1,11 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
-import com.miningmark48.jsongen.Main;
+import com.miningmark48.jsongen.reference.FXMLFiles;
 import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -27,15 +22,15 @@ public class MainController {
     }
 
     @FXML private void handleBlockButtonAction(ActionEvent event) throws IOException {
-        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/blocks.fxml"))));
+        Reference.setRoot(FXMLFiles.FXML_BLOCKS);
     }
 
     @FXML private void handleItemButtonAction(ActionEvent event) throws IOException {
-        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/items.fxml"))));
+        Reference.setRoot(FXMLFiles.FXML_ITEMS);
     }
 
     @FXML private void handleModInfoButtonAction(ActionEvent event) throws IOException {
-        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/modinfo.fxml"))));
+        Reference.setRoot(FXMLFiles.FXML_MODINFO);
     }
 
 }

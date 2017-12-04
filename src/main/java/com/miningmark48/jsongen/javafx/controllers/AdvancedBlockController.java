@@ -1,6 +1,7 @@
 package com.miningmark48.jsongen.javafx.controllers;
 
 import com.miningmark48.jsongen.Main;
+import com.miningmark48.jsongen.reference.FXMLFiles;
 import com.miningmark48.jsongen.reference.Reference;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -31,19 +32,19 @@ public class AdvancedBlockController {
     }
 
     @FXML private void handleOrientedButtonAction(ActionEvent event) throws IOException {
-        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced/oriented.fxml"))));
+        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_ADVANCEDBLOCKS_ORIENTED);
     }
 
     @FXML private void handleFenceButtonAction(ActionEvent event) throws IOException {
-        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced/fence.fxml"))));
+        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_ADVANCEDBLOCKS_FENCE);
     }
 
     @FXML private void handlePressurePlateButtonAction(ActionEvent event) throws IOException {
-        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced/pressure_plate.fxml"))));
+        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_ADVANCEDBLOCKS_PRESSUREPLATE);
     }
 
     @FXML private void handleSlabButtonAction(ActionEvent event) throws IOException {
-        Reference.showScene(Reference.getDefaultScene(FXMLLoader.load(getClass().getResource("/fxml/blocks_advanced/slab.fxml"))));
+        Main.getMainStage().getScene().setRoot(FXMLFiles.FXML_ADVANCEDBLOCKS_SLAB);
     }
 
 }

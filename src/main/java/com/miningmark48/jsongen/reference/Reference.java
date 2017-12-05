@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Reference {
@@ -44,11 +45,17 @@ public class Reference {
     }
 
     public static Stage getDefaultStage() {
-        Scene scene = getDefaultScene(FXMLFiles.FXML_MAIN);
+        Scene scene = getMainScene();
         Stage stage = new Stage();
         stage.setTitle("Minecraft JSON Generator for Minecraft " + Reference.gameVersion + " by " + Reference.author);
         stage.setScene(scene);
         stage.getIcons().add(new Image(Reference.iconURL));
+
+        Text textVersion = (Text) scene.lookup("#textInfo");
+        if (textVersion != null) {
+            textVersion.setText("v" + Reference.version + " by " + Reference.author);
+        }
+
         return stage;
     }
 

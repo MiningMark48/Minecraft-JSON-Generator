@@ -78,6 +78,15 @@
                         <Insets left="15.0" right="15.0" />
                      </GridPane.margin>
                   </Button>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                     <children>
+                        <Text fx:id="textInfo" layoutX="45.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="v0.0.0 by MiningMark48" textAlignment="RIGHT">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
                </children>
             </GridPane>
          </children>

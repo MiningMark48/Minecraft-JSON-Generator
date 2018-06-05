@@ -4,6 +4,6 @@ Generates the Minecraft JSON files for items and blocks (and now mcmod.info) in 
 
 Download available [here](https://github.com/MiningMark48/Minecraft-JSON-Generator/releases).
 
-More information can be found [here](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/2733203-minecraft-json-generator) on the forum.
+More information can be found [here](http://miningmark48.xyz/projects/mcjsongen/) on the website.
 
-![Screenshot1](http://i.imgur.com/oLaDhlW.png "Main window.")
+![Screenshot1](http://miningmark48.xyz/img/projects/mcjsongen/screenshot1.png "Main window.")

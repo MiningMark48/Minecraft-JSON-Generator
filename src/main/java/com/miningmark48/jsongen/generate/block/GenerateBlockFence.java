@@ -10,14 +10,14 @@ public class GenerateBlockFence {
 
     public static void genBlock(String modId, String blockName, String textureName, String path){
 
-        File fileDir = new File(path + "\\blockstates\\");
+        File fileDir = new File(path + File.separator + "blockstates" + File.separator);
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + blockName + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 
@@ -98,14 +98,14 @@ public class GenerateBlockFence {
 
     private static void genBlockModel(String modId, String blockName, String textureName, String path){
 
-        File fileDir = new File(path + "\\models\\block\\");
+        File fileDir = new File(path + File.separator + "models" + File.separator + "block" + File.separator);
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_post" + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + blockName + "_post" + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 
@@ -120,7 +120,7 @@ public class GenerateBlockFence {
 
             writer.close();
 
-            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_side" + ".json"), "UTF-8");
+            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + blockName + "_side" + ".json"), "UTF-8");
             JsonWriter jw2 = gson.newJsonWriter(writer2);
 
             jw2.beginObject();
@@ -134,7 +134,7 @@ public class GenerateBlockFence {
 
             writer2.close();
 
-            Writer writer3 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_inventory" + ".json"), "UTF-8");
+            Writer writer3 = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + blockName + "_inventory" + ".json"), "UTF-8");
             JsonWriter jw3 = gson.newJsonWriter(writer3);
 
             jw3.beginObject();
@@ -160,14 +160,14 @@ public class GenerateBlockFence {
 
     private static void genBlockItemModel(String modId, String blockName, String path){
 
-        File fileDir = new File(path + "\\models\\item\\");
+        File fileDir = new File(path + File.separator +  "models" + File.separator +  "item" + File.separator);
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + blockName + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 

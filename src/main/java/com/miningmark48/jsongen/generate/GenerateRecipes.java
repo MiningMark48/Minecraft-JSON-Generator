@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.*;
-import java.util.*;
 
 public class GenerateRecipes {
 
@@ -18,7 +17,7 @@ public class GenerateRecipes {
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\ " + name + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + name + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 

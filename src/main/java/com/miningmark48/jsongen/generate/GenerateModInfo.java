@@ -17,7 +17,7 @@ public class GenerateModInfo {
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\mcmod.info"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + "mcmod.info"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 

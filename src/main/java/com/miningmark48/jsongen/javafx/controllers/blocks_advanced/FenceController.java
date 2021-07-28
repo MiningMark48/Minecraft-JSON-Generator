@@ -1,4 +1,4 @@
-package com.miningmark48.jsongen.javafx.controllers;
+package com.miningmark48.jsongen.javafx.controllers.blocks_advanced;
 
 import com.miningmark48.jsongen.generate.block.GenerateBlockFence;
 import com.miningmark48.jsongen.reference.FXMLFiles;

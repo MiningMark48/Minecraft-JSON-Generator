@@ -27,8 +27,7 @@ public class VersionCheck implements Runnable{
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
             request.connect();
 
-            JsonParser jp = new JsonParser();
-            JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+            JsonElement root = JsonParser.parseReader(new InputStreamReader((InputStream) request.getContent()));
             JsonObject rootObj = root.getAsJsonObject();
 
             latestVersion = rootObj.get("version").getAsString();

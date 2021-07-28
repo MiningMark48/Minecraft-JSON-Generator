@@ -56,8 +56,7 @@ public class ModInfoController {
         try {
 
             if (file != null && file.exists()) {
-                JsonParser jp = new JsonParser();
-                JsonElement root = jp.parse(new FileReader(file.getPath()));
+                JsonElement root = JsonParser.parseReader(new FileReader(file.getPath()));
                 JsonArray rootArray = root.getAsJsonArray();
                 JsonObject rootObj = rootArray.get(0).getAsJsonObject();
 

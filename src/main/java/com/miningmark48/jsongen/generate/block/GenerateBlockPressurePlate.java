@@ -10,14 +10,14 @@ public class GenerateBlockPressurePlate {
 
     public static void genBlock(String modId, String blockName, String textureName, String path){
 
-        File fileDir = new File(path + "\\blockstates\\");
+        File fileDir = new File(path + File.separator +  "blockstates" + File.separator);
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + blockName + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 
@@ -56,14 +56,14 @@ public class GenerateBlockPressurePlate {
 
     private static void genBlockModel(String modId, String blockName, String textureName, String path){
 
-        File fileDir = new File(path + "\\models\\block\\");
+        File fileDir = new File(path + File.separator +  "models" + File.separator +  "block" + File.separator);
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_up" + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + blockName + "_up" + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 
@@ -78,7 +78,7 @@ public class GenerateBlockPressurePlate {
 
             writer.close();
 
-            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + "_down" + ".json"), "UTF-8");
+            Writer writer2 = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + blockName + "_down" + ".json"), "UTF-8");
             JsonWriter jw2 = gson.newJsonWriter(writer2);
 
             jw2.beginObject();
@@ -104,14 +104,14 @@ public class GenerateBlockPressurePlate {
 
     private static void genBlockItemModel(String modId, String blockName, String path){
 
-        File fileDir = new File(path + "\\models\\item\\");
+        File fileDir = new File(path + File.separator +  "models" + File.separator +  "item" + File.separator);
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + blockName + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + blockName + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 

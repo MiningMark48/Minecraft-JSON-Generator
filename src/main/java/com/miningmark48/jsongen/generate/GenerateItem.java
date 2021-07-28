@@ -10,14 +10,14 @@ public class GenerateItem {
 
     public static void genItem(String modId, String itemName, String textureName, String path){
 
-        File fileDir = new File(path + "\\models\\item\\");
+        File fileDir = new File(path + File.separator +  "models" + File.separator +  "item" + File.separator);
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + itemName + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + itemName + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 
@@ -43,14 +43,14 @@ public class GenerateItem {
 
     public static void genTool(String modId, String itemName, String textureName, String path){
 
-        File fileDir = new File(path + "\\models\\item\\");
+        File fileDir = new File(path + File.separator +  "models" + File.separator +  "item" + File.separator);
         if(!fileDir.exists()){
             fileDir.mkdirs();
         }
 
         try {
 
-            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + "\\" + itemName + ".json"), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(fileDir + File.separator + itemName + ".json"), "UTF-8");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonWriter jw = gson.newJsonWriter(writer);
 
